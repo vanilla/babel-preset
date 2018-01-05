@@ -11,6 +11,8 @@ const envTargets = {
     ]
 }
 
+console.log(process.env.NODE_ENV);
+
 module.exports = {
     presets: [
         require('babel-preset-react'),
@@ -20,5 +22,10 @@ module.exports = {
         require('babel-plugin-transform-object-rest-spread'),
         require('babel-plugin-syntax-dynamic-import'),
         require('babel-plugin-transform-class-properties'),
-    ]
+    ],
+    env: {
+        test: {
+            plugins: [require("babel-plugin-dynamic-import-node").default] // https://github.com/airbnb/babel-plugin-dynamic-import-node/issues/27
+        }
+    }
 }
