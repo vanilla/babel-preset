@@ -8,11 +8,11 @@ const envTargets = {
 };
 
 const preset = {
-    presets: [require("babel-preset-react"), require("babel-preset-env")],
+    presets: [require.resolve("babel-preset-react"), require.resolve("babel-preset-env")],
     plugins: [
-        require("babel-plugin-transform-object-rest-spread"),
-        require("babel-plugin-syntax-dynamic-import"),
-        require("babel-plugin-transform-class-properties")
+        require.resolve("babel-plugin-transform-object-rest-spread"),
+        require.resolve("babel-plugin-syntax-dynamic-import"),
+        require.resolve("babel-plugin-transform-class-properties")
     ]
 };
 
