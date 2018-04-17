@@ -17,7 +17,7 @@ const preset = {
 };
 
 if (process.env.NODE_ENV === "test" || process.env.BABEL_ENV === "test") {
-    preset.plugins.push(require("babel-plugin-dynamic-import-node").default);
+    preset.plugins.push(require.resolve("babel-plugin-dynamic-import-node"));
 }
 
 module.exports = preset;
