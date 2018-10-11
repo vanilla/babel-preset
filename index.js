@@ -5,16 +5,13 @@
 
 const { resolve } = require;
 
-const envTargets = {
-    browsers: ["ie > 9", "last 6 iOS versions", "last 4 versions"]
-};
-
 const preset = {
     presets: [
         [
             resolve("@babel/preset-env"),
             {
-                targets: envTargets
+                useBuiltIns: false,
+                targets: "ie > 10, last 4 versions"
             }
         ],
         resolve("@babel/preset-react"),
@@ -23,6 +20,7 @@ const preset = {
     plugins: [
         resolve("@babel/plugin-proposal-class-properties"),
         resolve("@babel/plugin-proposal-object-rest-spread"),
+        resolve("@babel/plugin-syntax-dynamic-import"),
         [
             resolve("@babel/plugin-transform-runtime"),
             {
