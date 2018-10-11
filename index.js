@@ -3,21 +3,33 @@
  * @license MIT
  */
 
+const { resolve } = require;
+
 const envTargets = {
     browsers: ["ie > 9", "last 6 iOS versions", "last 4 versions"]
 };
 
 const preset = {
-    presets: [require.resolve("babel-preset-react"), require.resolve("babel-preset-env")],
+    presets: [
+        [
+            resolve("@babel/preset-env"),
+            {
+                targets: envTargets
+            }
+        ],
+        resolve("@babel/preset-react"),
+        resolve("@babel/preset-typescript"),
+    ],
     plugins: [
-        require.resolve("babel-plugin-transform-object-rest-spread"),
-        require.resolve("babel-plugin-syntax-dynamic-import"),
-        require.resolve("babel-plugin-transform-class-properties")
+        resolve("@babel/plugin-proposal-class-properties"),
+        resolve("@babel/plugin-proposal-object-rest-spread"),
+        [
+            resolve("@babel/plugin-transform-runtime"),
+            {
+                useESModules: true
+            }
+        ]
     ]
 };
 
-if (process.env.NODE_ENV === "test" || process.env.BABEL_ENV === "test") {
-    preset.plugins.push(require.resolve("babel-plugin-dynamic-import-node"));
-}
-
-module.exports = preset;
+module.exports = () => preset;
