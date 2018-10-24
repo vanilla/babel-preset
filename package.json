@@ -1,6 +1,6 @@
 {
     "name": "@vanillaforums/babel-preset",
-    "version": "2.0.0-beta1",
+    "version": "2.0.0",
     "description": "The Vanilla Forums babel preset",
     "main": "index.js",
     "repository": "git@github.com:vanilla/babel-preset.git",
