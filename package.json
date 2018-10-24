@@ -1,20 +1,20 @@
 {
     "name": "@vanillaforums/babel-preset",
-    "version": "1.0.5",
+    "version": "2.0.0",
     "description": "The Vanilla Forums babel preset",
     "main": "index.js",
     "repository": "git@github.com:vanilla/babel-preset.git",
     "author": "Adam Charron <adam@charrondev.com>",
     "license": "MIT",
     "dependencies": {
-        "babel-plugin-dynamic-import-node": "^1.2.0",
-        "babel-plugin-syntax-dynamic-import": "^6.18.0",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-preset-env": "^1.6.1",
-        "babel-preset-react": "^6.24.1"
-    },
-    "devDependencies": {
-        "babel-core": "^6.26.0"
+        "@babel/core": "^7.1.2",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+        "@babel/plugin-transform-runtime": "^7.1.0",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-typescript": "^7.1.0",
+        "@babel/runtime": "^7.1.2"
     }
 }
