@@ -5,6 +5,17 @@
 
 const { resolve } = require;
 
+const runtimePlugins = process.env.NODE_ENV === "test"
+    ? [] :
+    [
+        [
+            resolve("@babel/plugin-transform-runtime"),
+            {
+                useESModules: true
+            },
+        ],
+    ];
+
 const preset = {
     presets: [
         [
@@ -21,13 +32,8 @@ const preset = {
         resolve("@babel/plugin-proposal-class-properties"),
         resolve("@babel/plugin-proposal-object-rest-spread"),
         resolve("@babel/plugin-syntax-dynamic-import"),
-        [
-            resolve("@babel/plugin-transform-runtime"),
-            {
-                useESModules: true
-            }
-        ]
-    ]
+        ...runtimePlugins,
+    ],
 };
 
 module.exports = () => preset;
